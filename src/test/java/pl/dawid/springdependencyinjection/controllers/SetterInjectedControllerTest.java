@@ -2,9 +2,7 @@ package pl.dawid.springdependencyinjection.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pl.dawid.springdependencyinjection.services.GreetingServiceImpl;
-
-import static org.junit.jupiter.api.Assertions.*;
+import pl.dawid.springdependencyinjection.services.ConstructorGreetingService;
 
 class SetterInjectedControllerTest {
 
@@ -13,7 +11,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new SetterInjectedController();
-        controller.setGreetingService(new GreetingServiceImpl());
+        controller.setGreetingService(new ConstructorGreetingService());
     }
 
     @Test
