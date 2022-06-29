@@ -3,16 +3,16 @@ package pl.dawid.springdependencyinjection;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import pl.dawid.springdependencyinjection.controllers.ConstructorInjectedController;
-import pl.dawid.springdependencyinjection.controllers.MyController;
-import pl.dawid.springdependencyinjection.controllers.PropertyInjectedController;
-import pl.dawid.springdependencyinjection.controllers.SetterInjectedController;
+import pl.dawid.springdependencyinjection.controllers.*;
 
 @SpringBootApplication
 public class SpringDependencyInjectionApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SpringDependencyInjectionApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		MyController myController = (MyController) ctx.getBean("myController");
 
